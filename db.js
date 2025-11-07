@@ -4,8 +4,12 @@ const authors = [
   { id: 3, name: "Jason" },
 ];
 
+async function getAuthors() {
+  return authors;
+}
+
 async function getAuthorById(authorId) {
   return authors.find((author) => author.id === authorId);
 }
 
-export default { getAuthorById };
+export default { getAuthors, getAuthorById };

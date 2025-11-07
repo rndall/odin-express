@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { getAuthorById } from "../controllers/authors.js";
+import { getAuthors, getAuthorById } from "../controllers/authors.js";
 
 const authorRouter = Router();
 
-authorRouter.get("/", (_req, res) => res.send("All authors"));
+authorRouter.get("/", getAuthors);
 authorRouter.get("/:authorId", getAuthorById);
 
 export default authorRouter;
