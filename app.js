@@ -1,13 +1,16 @@
 import express from "express";
+import authorRouter from "./routes/authors.js";
+import bookRouter from "./routes/books.js";
+import indexRouter from "./routes/index.js";
+
 const app = express();
 
-app.get("/", (req, res) => res.send("Hello, world!"));
+app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
+app.use("/", indexRouter);
 
 const PORT = 3000;
 app.listen(PORT, (error) => {
-  // This is important!
-  // Without this, any startup errors will silently fail
-  // instead of giving you a helpful error message.
   if (error) {
     throw error;
   }
