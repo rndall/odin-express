@@ -1,9 +1,10 @@
 import { Router } from "express";
+import { getIndex, getAbout } from "../controllers/index.js";
 
 const indexRouter = Router();
 
-indexRouter.get("/", (_req, res) => res.send("Index"));
-indexRouter.get("/about", (_req, res) => res.send("About"));
+indexRouter.get("/", getIndex);
+indexRouter.get("/about", getAbout);
 indexRouter.get("/contact", (_req, res) => res.send("Get contact"));
 indexRouter.post("/contact", (_req, res) => res.send("Post contact"));
 
